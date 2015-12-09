@@ -10,19 +10,16 @@ public class H2test {
     		//conectamos a la base de datos
         creaConexion();
         //creamos la tabla y le metemos datos
-        runStatement("create table Empleados ("
+       /* runStatement("create table Empleados ("
                 + "Empleados_ID INTEGER, "
-                + "Nombre VARCHAR(30))");
-        runStatement("insert into Empleados values (1,'Juan')");
+                + "Nombre VARCHAR(30))");*/
+        /*runStatement("insert into Empleados values (1,'Juan')");
         runStatement("insert into Empleados values (2,'Carolina')");
         runStatement("insert into Empleados values (3,'Paola')");
-        runStatement("insert into Empleados values (4,'Alicia')");
+        runStatement("insert into Empleados values (4,'Alicia')");*/
         //hacemos una consulta para ver los datos de la tabla
         hacerConsulta("SELECT * FROM empleados");
         //runStatement("drop table empleados");
- 
-        
- 
     }
  
     public static void creaConexion() {
@@ -54,8 +51,7 @@ public class H2test {
     }
  
     public static void hacerConsulta(String sqlstmt) {
-         
- 
+      
         try {
             Statement select = conn.createStatement();
             ResultSet result = select.executeQuery(sqlstmt);
@@ -76,7 +72,6 @@ public class H2test {
                     }
                 }
                 System.out.println("");
- 
             }
         } catch (Exception e) {
             System.err.println("SQLException: " + e.getMessage());
